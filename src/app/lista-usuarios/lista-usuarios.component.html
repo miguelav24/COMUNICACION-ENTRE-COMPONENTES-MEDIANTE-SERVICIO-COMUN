@@ -1,0 +1,40 @@
+
+<!-- Tabla de usuarios -->
+<table class="ui compact celled definition table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nombre</th>
+      <th>Fecha Registro</th>
+      <th>E-mail</th>
+      <th>Premium Plan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Lista de usuarios -->
+    <tr *ngFor="let usuario of usuarios">
+      <td class="collapsing">
+        <div class="ui fitted slider checkbox">
+          <input type="checkbox" [checked]="usuario.esPremium" (change)="usuario.esPremium = !usuario.esPremium"> <label></label>
+        </div>
+      </td>
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.fechaRegistro }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.esPremium }}</td>
+    </tr>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th></th>
+      <th colspan="4">
+        <div class="ui right floated small primary labeled icon button" (click)="crearUsuario($event)">
+          <i class="user icon" ></i> Añadir Usuario
+        </div>
+        <div class="ui small secondary icon button" (click)="aprobarTodos($event)">
+            <i class="check icon" ></i>  Aprobar Todos
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+</table>

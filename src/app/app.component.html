@@ -1,0 +1,7 @@
+<div class="ui container" style="margin-top: 5%;">
+  <h2 class="ui header center" style="text-align: center; margin-bottom: 5%;">
+    LISTADO DE USUARIOS
+  </h2>
+  <lista-usuarios [usuarios]="usuarios$ | async" (onCrearUsuario)="crearUsuario($event)" (onAprobarTodos)="aprobarTodos($event)">
+  </lista-usuarios>
+</div>
